@@ -12,7 +12,7 @@ class Solution {
                 char temp = chs[i];
                 chs[i] = chs[j];
                 chs[j] = temp;
-	    }
+	    	}
                 
             String revNum = new String(chs);
                 
@@ -21,10 +21,9 @@ class Solution {
             }
                 
             return Integer.parseInt(revNum);
-            }
-        
-        catch(Exception e) {
+		}
+       	catch(Exception e) {
             return 0;
-	}
+		}
     }
 }
