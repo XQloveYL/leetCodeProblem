@@ -1,0 +1,54 @@
+class Solution {
+    public int romanToInt(String s) {
+        int number = 0;
+        char[] chrarray = s.toCharArray();
+        for (int i = 0; i < chrarray.length; i++) {
+            switch(chrarray[i]) {
+                case 'I':
+                    if ((i + 1) < chrarray.length) {
+                        if (chrarray[i + 1] == 'V' || chrarray[i + 1] == 'X') {
+                            number -= 2;
+                        }
+                    }
+                    number += 1;
+                    break;
+                    
+                case 'V':
+                    number += 5;
+                    break;
+                    
+                case 'X':
+                    if ((i + 1) < chrarray.length) {
+                        if (chrarray[i + 1] == 'L' || chrarray[i + 1] == 'C') {
+                            number -= 20;
+                        }
+                    }
+                    number += 10;
+                    break;
+                
+                case 'L':
+                    number += 50;
+                    break;
+                    
+                case 'C':
+                    if ((i + 1) < chrarray.length) {
+                        if (chrarray[i + 1] == 'D' || chrarray[i + 1] == 'M') {
+                            number -= 200;
+                        }
+                    }
+                    number += 100;
+                    break;
+                    
+                case 'D':
+                    number += 500;
+                    break;
+                
+                case 'M':
+                    number += 1000;
+                    break;
+                    
+            }
+        }
+        return number;
+    }
+}
